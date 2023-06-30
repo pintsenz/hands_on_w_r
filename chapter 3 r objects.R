@@ -97,3 +97,10 @@ m
 #array
 #creates nd 
 ar <- array(c(),dim=c())
+
+#excerise
+hand1 <- c("ace","king","queen","jack","ten","spades","spades","spades","spades","spades")
+dim(hand1) <- c(5,2)
+hand1
+
+#class
