@@ -104,3 +104,36 @@ dim(hand1) <- c(5,2)
 hand1
 
 #class
+#changing dimensions will not change the object but it will change the class 
+dim(die) <- c(2,3)
+die
+typeof(die)
+class(die)
+#every element in matrix is a double but arranged in new structure 
+class()
+#may need to specify class to find it instead of just using attribute 
+
+#date and time 
+#r uses special class to represent date and time 
+Sys.time()
+now <- Sys.time()
+now
+typeof(now)
+class(now)
+#POSIX is a framework for representing date and time
+unclass(now)
+#unclass returns a copy of the arguments with class info removed
+
+#factors 
+#a type of class that is important to learn 
+#it can only have certain values 
+#pass atomic vector into factor function 
+gender <- factor(c("male","female","female", "male"))
+typeof(gender)
+attributes(gender)
+unclass(gender)
+#makes it easy to put catrgorical data into stat models 
+as.character(gender)
+#convert factor to character string 
+
+#exercise 
