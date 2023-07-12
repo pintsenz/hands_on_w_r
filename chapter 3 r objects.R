@@ -132,8 +132,48 @@ gender <- factor(c("male","female","female", "male"))
 typeof(gender)
 attributes(gender)
 unclass(gender)
-#makes it easy to put catrgorical data into stat models 
+#makes it easy to put categorical data into stat models 
 as.character(gender)
 #convert factor to character string 
 
-#exercise 
+#coercion 
+#if a character string is present in atomic vector then r will convert everything else in the vector to be character 
+#if it only has numbers and logicals then it will convert logicals to numbers, true becomes 1 and false will become 0 
+sum(c(TRUE, TRUE, FALSE, FALSE))
+# this will calculate the numbers of true and false 
+
+#lists
+#they dont group together individual values 
+#group r objects 
+list1 <-list(100:130, "r", list(TRUE, FALSE))
+list1
+#double bracket is which element of the list is being displayed
+#single bracket is which subelement is being displayed 
+
+#excercise 
+card <- list("ace", "hearts",1)
+card
+
+#data frames
+#each vector becomes a column and each cell in the column must be the same type of data 
+df <- data.frame(face=c("ace","two","six"), suit=c("clubs","clubs","clubs"), value=c(1,2,3))
+df
+#give data frame any vectors each separated by comma
+#each vector should be set equal to a name that describes the vector 
+#it will turn each vector into column of new data frame 
+#columns must be the same lengths 
+typeof(df)
+#each data frame is a list with class data.frame
+class(df)
+str(df)
+#r saved character strings as factors
+df <- data.frame(face=c("ace","two","six"), suit=c("clubs","clubs","clubs"), value=c(1,2,3), stringsAsFactors = FALSE)
+str(df)
+#use stringasfactors to avoid that
+df
+
+#loading data
+
+#saving data
+write.csv(deck, file="cards.cvs", row.names = FALSE)
+#always use row.names=FALSE
